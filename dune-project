@@ -20,7 +20,7 @@
  (depends 
    ocaml dune melange
    ;; react
-   reason-react
+   reason reason-react reason-react-ppx
    ;; dev tools
    ocamlformat ocaml-lsp-server)
  (tags
