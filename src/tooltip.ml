@@ -14,7 +14,7 @@ end
 module Root = struct
   external make
     :  ?defaultOpen:bool
-    -> open_:(bool[@mel.as "open"])
+    -> ?open_:(bool[@mel.as "open"])
     -> ?onOpenChange:((bool -> bool) -> unit)
     -> ?delayDuration:int
     -> ?children:element
@@ -23,7 +23,7 @@ module Root = struct
   [@@react.component] [@@mel.module "@radix-ui/react-tooltip"]
 end
 
-module Tigger = struct
+module Trigger = struct
   external make : ?asChild:bool -> ?children:element -> ?className:string -> element = "Trigger"
   [@@react.component] [@@mel.module "@radix-ui/react-tooltip"]
 end
