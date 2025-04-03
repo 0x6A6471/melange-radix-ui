@@ -5,13 +5,21 @@
 
 ## Installation
 
-add the following to your `dune-project` file:
+pin `melange-radix-ui` inside your `dune-project` file:
 
 ```lisp
 (pin
- (url "../melange-radix-ui")
+ (url "git+https://github.com/0x6A6471/melange-radix-ui")
  (package (name melange-radix-ui)))
 ```
+
+add `melange-radix-ui` to depends in your package stanza:
+
+```lisp
+(depends melange-radix-ui)
+```
+
+build:
 
 ```sh
 dune pkg lock
