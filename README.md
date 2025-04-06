@@ -36,7 +36,7 @@ dune build
 - [ ] [Collapsible](https://www.radix-ui.com/primitives/docs/components/collapsible)
 - [ ] [Context Menu](https://www.radix-ui.com/primitives/docs/components/context-menu)
 - [ ] [Dialog](https://www.radix-ui.com/primitives/docs/components/dialog)
-- [ ] [Dropdown Menu](https://www.radix-ui.com/primitives/docs/components/dropdown-menu)
+- [x] [Dropdown Menu](https://www.radix-ui.com/primitives/docs/components/dropdown-menu)
 - [ ] [Form](https://www.radix-ui.com/primitives/docs/components/form)
 - [ ] [Hover Card](https://www.radix-ui.com/primitives/docs/components/hover-card)
 - [ ] [Label](https://www.radix-ui.com/primitives/docs/components/label)
