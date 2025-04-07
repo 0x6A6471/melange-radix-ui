@@ -47,7 +47,7 @@ module Content = struct
     -> ?forceMount:bool
     -> ?side:Types.side
     -> ?sideOffset:int
-    -> ?align:Types.align
+    -> ?align:[ `start | `center | `end_ [@mel.as "end"] ]
     -> ?alignOffset:int
     -> ?avoidCollisions:bool
     -> ?collissionBoundary:Types.collision_boundary

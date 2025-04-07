@@ -1,9 +1,3 @@
-type align =
-  [ `start
-  | `center
-  | `endd
-  ]
-
 type focus_event = React.Event.Focus.t -> unit
 type keyboard_event = React.Event.Keyboard.t -> unit
 type pointer_event = React.Event.Pointer.t -> unit

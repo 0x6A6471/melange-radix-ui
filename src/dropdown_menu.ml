@@ -6,7 +6,7 @@ module Root = struct
 
   external make
     :  ?defaultOpen:bool
-    -> open_:(bool[@mel.as "open"])
+    -> ?open_:(bool[@mel.as "open"])
     -> ?onOpenChange:((bool -> bool) -> unit)
     -> ?modal:bool
     -> ?dir:dir
@@ -18,7 +18,7 @@ end
 
 module Trigger = struct
   external make
-    :  asChild:bool
+    :  ?asChild:bool
     -> ?className:string
     -> children:React.element
     -> React.element
@@ -48,11 +48,11 @@ module Content = struct
     -> ?forceMount:bool
     -> ?side:Types.side
     -> ?sideOffset:int
-    -> ?align:Types.align
+    -> ?align:[ `start | `center | `end_ [@mel.as "end"] ]
     -> ?alignOffset:int
     -> ?avoidCollisions:bool
-    -> ?collissionBoundary:Types.collision_boundary
-    -> ?collissionPadding:Types.collision_padding
+    -> ?collisionBoundary:Types.collision_boundary
+    -> ?collisionPadding:Types.collision_padding
     -> ?arrowPadding:int
     -> ?sticky:Types.sticky
     -> ?hideWhenDetached:bool
@@ -165,7 +165,7 @@ module Sub = struct
   external make
     :  ?defaultOpen:bool
     -> ?open_:(bool[@mel.as "open"])
-    -> onOpenChange:((bool -> bool) -> unit)
+    -> ?onOpenChange:((bool -> bool) -> unit)
     -> React.element
     = "Sub"
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
@@ -195,11 +195,11 @@ module SubContent = struct
     -> ?forceMount:bool
     -> ?side:Types.side
     -> ?sideOffset:int
-    -> ?align:Types.align
+    -> ?align:[ `start | `center | `end_ [@mel.as "end"] ]
     -> ?alignOffset:int
     -> ?avoidCollisions:bool
-    -> ?collissionBoundary:Types.collision_boundary
-    -> ?collissionPadding:Types.collision_padding
+    -> ?collisionBoundary:Types.collision_boundary
+    -> ?collisionPadding:Types.collision_padding
     -> ?arrowPadding:int
     -> ?sticky:Types.sticky
     -> ?hideWhenDetached:bool
