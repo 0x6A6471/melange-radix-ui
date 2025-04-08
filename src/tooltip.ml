@@ -15,7 +15,7 @@ module Root = struct
   external make
     :  ?defaultOpen:bool
     -> ?open_:(bool[@mel.as "open"])
-    -> ?onOpenChange:((bool -> bool) -> unit)
+    -> ?onOpenChange:(bool -> unit)
     -> ?delayDuration:int
     -> ?children:element
     -> element

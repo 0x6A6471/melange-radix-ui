@@ -7,7 +7,7 @@ module Root = struct
   external make
     :  ?defaultOpen:bool
     -> ?open_:(bool[@mel.as "open"])
-    -> ?onOpenChange:((bool -> bool) -> unit)
+    -> ?onOpenChange:(bool -> unit)
     -> ?modal:bool
     -> ?dir:dir
     -> ?children:React.element
@@ -103,19 +103,15 @@ module Label = struct
 end
 
 module CheckboxItem = struct
-  type checked =
-    [ `Bool of bool
-    | `Indeterminate
-    ]
-
   external make
     :  ?asChild:bool
-    -> ?checked:checked
-    -> ?onCheckedChanged:((bool -> bool) -> unit)
+    -> ?checked:bool
+    -> ?onCheckedChanged:(bool -> unit)
     -> ?disabled:bool
     -> ?onSelect:Types.synthetic_event
     -> ?textValue:string
     -> ?className:string
+    -> children:React.element
     -> React.element
     = "CheckboxItem"
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
@@ -151,6 +147,7 @@ module ItemIndicator = struct
     :  ?asChild:bool
     -> ?forceMount:bool
     -> ?className:string
+    -> ?children:React.element
     -> React.element
     = "ItemIndicator"
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
@@ -165,7 +162,7 @@ module Sub = struct
   external make
     :  ?defaultOpen:bool
     -> ?open_:(bool[@mel.as "open"])
-    -> ?onOpenChange:((bool -> bool) -> unit)
+    -> ?onOpenChange:(bool -> unit)
     -> React.element
     = "Sub"
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]

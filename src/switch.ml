@@ -5,7 +5,7 @@ module Root = struct
     :  ?asChild:bool
     -> ?defaultChecked:bool
     -> checked:bool
-    -> onCheckedChange:((bool -> bool) -> unit)
+    -> onCheckedChange:(bool -> unit)
     -> ?disabled:bool
     -> ?required:bool
     -> ?name:string
