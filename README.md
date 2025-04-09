@@ -27,7 +27,7 @@ dune build
 ```
 
 ## Usage
-See [examples](https://github.com/0x6A6471/melange-radix-ui/tree/master/examples)
+see [examples](https://github.com/0x6A6471/melange-radix-ui/tree/master/examples)
 
 ## Supported Radix Primitives
 
