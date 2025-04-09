@@ -1,4 +1,4 @@
-(version 1.22.0)
+(version 1.21.0)
 
 (build
  (progn
@@ -36,6 +36,6 @@
 (source
  (fetch
   (url
-   https://github.com/ocaml/ocaml-lsp/releases/download/1.22.0/lsp-1.22.0.tbz)
+   https://github.com/ocaml/ocaml-lsp/releases/download/1.21.0/lsp-1.21.0.tbz)
   (checksum
-   sha256=519dc3577d15dc2210defa580481a743579118d50693b691bb10cbc8203fb581)))
+   sha256=67870337ff23d0d2ba43774bfb58a8fde04977ea37da4d2dc500ed0b57cef717)))

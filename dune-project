@@ -13,6 +13,15 @@
 
 (maintainers "0x6A6471 <0x6A6471@proton.me>")
 
+; mlx files
+(dialect
+ (name mlx)
+ (implementation
+  (extension mlx)
+  (merlin_reader mlx)
+  (preprocess
+   (run mlx-pp %{input-file}))))
+
 (package
  (name melange-radix-ui)
  (synopsis "Melange bindings for Radix primitives")
@@ -21,8 +30,10 @@
    ocaml dune melange
    ;; react
    reason reason-react reason-react-ppx
+   ;; mlx
+   mlx ocamlmerlin-mlx
    ;; dev tools
-   ocamlformat ocaml-lsp-server)
+   ocamlformat-mlx ocamlformat ocamlformat-rpc ocaml-lsp-server)
  (tags
   ("ui" "radix-ui")))
 

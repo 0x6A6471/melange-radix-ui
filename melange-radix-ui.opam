@@ -14,7 +14,11 @@ depends: [
   "reason"
   "reason-react"
   "reason-react-ppx"
+  "mlx"
+  "ocamlmerlin-mlx"
+  "ocamlformat-mlx"
   "ocamlformat"
+  "ocamlformat-rpc"
   "ocaml-lsp-server"
   "odoc" {with-doc}
 ]
