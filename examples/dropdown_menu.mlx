@@ -1,0 +1,163 @@
+open React
+open Melange_radix_ui
+
+let[@react.component] make () =
+  let bookmarks_checked, set_bookmarks_checked = useState (fun _ -> true) in
+  let urls_checked, set_urls_checked = useState (fun _ -> false) in
+  let person, set_person = useState (fun _ -> "pedro") in
+
+  <Dropdown_menu.Root>
+    <Dropdown_menu.Trigger asChild=true>
+      <button className="inline-flex size-[35px] items-center justify-center rounded-full bg-white text-violet11 shadow-[0_2px_10px] shadow-blackA4 outline-none hover:bg-violet3 focus:shadow-[0_0_0_2px] focus:shadow-black">
+        <svg width="15"
+             height="15"
+             viewBox="0 0 15 15"
+             fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.5 3C1.22386 3 1 3.22386 1 3.5C1 3.77614 1.22386 4 1.5 4H13.5C13.7761 4 14 3.77614 14 3.5C14 3.22386 13.7761 3 13.5 3H1.5ZM1 7.5C1 7.22386 1.22386 7 1.5 7H13.5C13.7761 7 14 7.22386 14 7.5C14 7.77614 13.7761 8 13.5 8H1.5C1.22386 8 1 7.77614 1 7.5ZM1 11.5C1 11.2239 1.22386 11 1.5 11H13.5C13.7761 11 14 11.2239 14 11.5C14 11.7761 13.7761 12 13.5 12H1.5C1.22386 12 1 11.7761 1 11.5Z"
+                fill="currentColor"
+                fillRule="evenodd"
+                clipRule="evenodd" />
+        </svg>
+      </button>
+    </Dropdown_menu.Trigger>
+    <Dropdown_menu.Portal>
+      <Dropdown_menu.Content className="min-w-[220px] rounded-md bg-white p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade"
+                             sideOffset=5>
+        <Dropdown_menu.Item className="group relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[13px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1">
+          (string "New Tab ")
+          <div className="ml-auto pl-5 text-mauve11 group-data-[disabled]:text-mauve8 group-data-[highlighted]:text-white">
+            (string "⌘+T")
+          </div>
+        </Dropdown_menu.Item>
+        <Dropdown_menu.Item className="group relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[13px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1">
+          (string "New Window ")
+          <div className="ml-auto pl-5 text-mauve11 group-data-[disabled]:text-mauve8 group-data-[highlighted]:text-white">
+            (string "⌘+N")
+          </div>
+        </Dropdown_menu.Item>
+        <Dropdown_menu.Item className="group relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[13px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1"
+                            disabled=true>
+          (string "New Private Window ")
+          <div className="ml-auto pl-5 text-mauve11 group-data-[disabled]:text-mauve8 group-data-[highlighted]:text-white">
+            (string "⇧+⌘+N")
+          </div>
+        </Dropdown_menu.Item>
+        <Dropdown_menu.Sub>
+          <Dropdown_menu.SubTrigger className="group relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[13px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[highlighted]:data-[state=open]:bg-violet9 data-[state=open]:bg-violet4 data-[disabled]:text-mauve8 data-[highlighted]:data-[state=open]:text-violet1 data-[highlighted]:text-violet1 data-[state=open]:text-violet11">
+            (string "More Tools")
+            <div className="ml-auto pl-5 text-mauve11 group-data-[disabled]:text-mauve8 group-data-[highlighted]:text-white">
+              <svg width="15"
+                   height="15"
+                   viewBox="0 0 15 15"
+                   fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z"
+                      fill="currentColor"
+                      fillRule="evenodd"
+                      clipRule="evenodd" />
+              </svg>
+            </div>
+          </Dropdown_menu.SubTrigger>
+          <Dropdown_menu.Portal>
+            <Dropdown_menu.SubContent className="min-w-[220px] rounded-md bg-white p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade"
+                                      sideOffset=2
+                                      alignOffset=(-5)>
+              <Dropdown_menu.Item className="group relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[13px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1">
+                (string "Save Page As… ")
+                <div className="ml-auto pl-5 text-mauve11 group-data-[disabled]:text-mauve8 group-data-[highlighted]:text-white">
+                  (string "⌘+S")
+                </div>
+              </Dropdown_menu.Item>
+              <Dropdown_menu.Item className="relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[13px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1">
+                (string "Create Shortcut…")
+              </Dropdown_menu.Item>
+              <Dropdown_menu.Item className="relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[13px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1">
+                (string "Name Window…")
+              </Dropdown_menu.Item>
+              <Dropdown_menu.Separator className="m-[5px] h-px bg-violet6" />
+              <Dropdown_menu.Item className="relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[13px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1">
+                (string "Developer Tools")
+              </Dropdown_menu.Item>
+            </Dropdown_menu.SubContent>
+          </Dropdown_menu.Portal>
+        </Dropdown_menu.Sub>
+        <Dropdown_menu.Separator className="m-[5px] h-px bg-violet6" />
+        <Dropdown_menu.CheckboxItem className="group relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[13px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1"
+                                    checked=bookmarks_checked
+                                    onCheckedChanged=(fun checked ->
+                                                       set_bookmarks_checked (fun _ -> checked))>
+          <Dropdown_menu.ItemIndicator className="absolute left-0 inline-flex w-[25px] items-center justify-center">
+            <svg width="15"
+                 height="15"
+                 viewBox="0 0 15 15"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+                    fill="currentColor"
+                    fillRule="evenodd"
+                    clipRule="evenodd" />
+            </svg>
+          </Dropdown_menu.ItemIndicator>
+          (string "Show Bookmarks ")
+          <div className="ml-auto pl-5 text-mauve11 group-data-[disabled]:text-mauve8 group-data-[highlighted]:text-white">
+            (string "⌘+B")
+          </div>
+        </Dropdown_menu.CheckboxItem>
+        <Dropdown_menu.CheckboxItem className="relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[13px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1"
+                                    checked=urls_checked
+                                    onCheckedChanged=(fun checked ->
+                                                       set_urls_checked (fun _ -> checked))>
+          <Dropdown_menu.ItemIndicator className="absolute left-0 inline-flex w-[25px] items-center justify-center">
+            <svg width="15"
+                 height="15"
+                 viewBox="0 0 15 15"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.4669 3.72684C11.7558 3.91574 11.8369 4.30308 11.648 4.59198L7.39799 11.092C7.29783 11.2452 7.13556 11.3467 6.95402 11.3699C6.77247 11.3931 6.58989 11.3355 6.45446 11.2124L3.70446 8.71241C3.44905 8.48022 3.43023 8.08494 3.66242 7.82953C3.89461 7.57412 4.28989 7.55529 4.5453 7.78749L6.75292 9.79441L10.6018 3.90792C10.7907 3.61902 11.178 3.53795 11.4669 3.72684Z"
+                    fill="currentColor"
+                    fillRule="evenodd"
+                    clipRule="evenodd" />
+            </svg>
+          </Dropdown_menu.ItemIndicator>
+          (string "Show Full URLs")
+        </Dropdown_menu.CheckboxItem>
+        <Dropdown_menu.Separator className="m-[5px] h-px bg-violet6" />
+        <Dropdown_menu.Label className="pl-[25px] text-xs leading-[25px] text-mauve11">
+          (string "People")
+        </Dropdown_menu.Label>
+        <Dropdown_menu.RadioGroup value=person onValueChange=(fun str -> set_person (fun _ -> str))>
+          <Dropdown_menu.RadioItem className="relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[13px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1"
+                                   value="pedro">
+            <Dropdown_menu.ItemIndicator className="absolute left-0 inline-flex w-[25px] items-center justify-center">
+              <svg width="15"
+                   height="15"
+                   viewBox="0 0 15 15"
+                   fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.875 7.5C9.875 8.81168 8.81168 9.875 7.5 9.875C6.18832 9.875 5.125 8.81168 5.125 7.5C5.125 6.18832 6.18832 5.125 7.5 5.125C8.81168 5.125 9.875 6.18832 9.875 7.5Z"
+                      fill="currentColor" />
+              </svg>
+            </Dropdown_menu.ItemIndicator>
+            (string "Pedro Duarte")
+          </Dropdown_menu.RadioItem>
+          <Dropdown_menu.RadioItem className="relative flex h-[25px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[13px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1"
+                                   value="colm">
+            <Dropdown_menu.ItemIndicator className="absolute left-0 inline-flex w-[25px] items-center justify-center">
+              <svg width="15"
+                   height="15"
+                   viewBox="0 0 15 15"
+                   fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.875 7.5C9.875 8.81168 8.81168 9.875 7.5 9.875C6.18832 9.875 5.125 8.81168 5.125 7.5C5.125 6.18832 6.18832 5.125 7.5 5.125C8.81168 5.125 9.875 6.18832 9.875 7.5Z"
+                      fill="currentColor" />
+              </svg>
+            </Dropdown_menu.ItemIndicator>
+            (string "Colm Tuite")
+          </Dropdown_menu.RadioItem>
+        </Dropdown_menu.RadioGroup>
+        <Dropdown_menu.Arrow className="fill-white" />
+      </Dropdown_menu.Content>
+    </Dropdown_menu.Portal>
+  </Dropdown_menu.Root>
+;;

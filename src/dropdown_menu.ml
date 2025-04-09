@@ -121,7 +121,7 @@ module RadioGroup = struct
   external make
     :  ?asChild:bool
     -> value:string
-    -> ?onValueChange:((string -> string) -> unit)
+    -> ?onValueChange:(string -> unit)
     -> children:React.element
     -> React.element
     = "RadioGroup"
@@ -137,6 +137,7 @@ module RadioItem = struct
     -> ?textValue:string
     -> ?onValueChange:((string -> string) -> unit)
     -> ?className:string
+    -> children:React.element
     -> React.element
     = "RadioItem"
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
@@ -163,6 +164,7 @@ module Sub = struct
     :  ?defaultOpen:bool
     -> ?open_:(bool[@mel.as "open"])
     -> ?onOpenChange:(bool -> unit)
+    -> children:React.element
     -> React.element
     = "Sub"
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
@@ -170,7 +172,7 @@ end
 
 module SubTrigger = struct
   external make
-    :  asChild:bool
+    :  ?asChild:bool
     -> ?disabled:bool
     -> ?textValue:string
     -> ?className:string

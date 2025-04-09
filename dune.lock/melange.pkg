@@ -1,4 +1,4 @@
-(version 5.1.0-53)
+(version 5.1.0-52)
 
 (build
  (progn
@@ -12,6 +12,6 @@
 (source
  (fetch
   (url
-   https://github.com/melange-re/melange/releases/download/5.1.0-53/melange-5.1.0-53.tbz)
+   https://github.com/melange-re/melange/releases/download/5.1.0-52/melange-5.1.0-52.tbz)
   (checksum
-   sha256=f7aac30f3ba5feff8373e2164cdb5b38a59457cadfec74b564c2b62d035ca4a9)))
+   sha256=1062089c60a8dc900363213898bc39173926e0e07e57dca2d9ac95d2556adefd)))

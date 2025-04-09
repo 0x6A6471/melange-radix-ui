@@ -4,8 +4,8 @@ module Root = struct
   external make
     :  ?asChild:bool
     -> ?defaultChecked:bool
-    -> checked:bool
-    -> onCheckedChange:(bool -> unit)
+    -> ?checked:bool
+    -> ?onCheckedChange:(bool -> unit)
     -> ?disabled:bool
     -> ?required:bool
     -> ?name:string
