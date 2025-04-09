@@ -1,6 +1,6 @@
 open React
 
-module Root = struct
+module Root : sig
   external make
     :  ?defaultOpen:bool
     -> ?open_:(bool[@mel.as "open"])
@@ -13,12 +13,12 @@ module Root = struct
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
 end
 
-module Trigger = struct
+module Trigger : sig
   external make : ?asChild:bool -> ?className:string -> children:element -> element = "Trigger"
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
 end
 
-module Portal = struct
+module Portal : sig
   external make
     :  ?forceMount:bool
     -> ?container:Dom.htmlElement
@@ -28,7 +28,7 @@ module Portal = struct
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
 end
 
-module Content = struct
+module Content : sig
   external make
     :  ?asChild:bool
     -> ?loop:bool
@@ -55,7 +55,7 @@ module Content = struct
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
 end
 
-module Arrow = struct
+module Arrow : sig
   external make
     :  ?asChild:bool
     -> ?width:int
@@ -66,7 +66,7 @@ module Arrow = struct
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
 end
 
-module Item = struct
+module Item : sig
   external make
     :  ?asChild:bool
     -> ?disabled:bool
@@ -79,17 +79,17 @@ module Item = struct
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
 end
 
-module Group = struct
+module Group : sig
   external make : ?asChild:bool -> element = "Group"
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
 end
 
-module Label = struct
+module Label : sig
   external make : ?asChild:bool -> ?className:string -> children:element -> element = "Label"
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
 end
 
-module CheckboxItem = struct
+module CheckboxItem : sig
   external make
     :  ?asChild:bool
     -> ?checked:bool
@@ -104,7 +104,7 @@ module CheckboxItem = struct
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
 end
 
-module RadioGroup = struct
+module RadioGroup : sig
   external make
     :  ?asChild:bool
     -> value:string
@@ -115,7 +115,7 @@ module RadioGroup = struct
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
 end
 
-module RadioItem = struct
+module RadioItem : sig
   external make
     :  ?asChild:bool
     -> value:string
@@ -130,7 +130,7 @@ module RadioItem = struct
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
 end
 
-module ItemIndicator = struct
+module ItemIndicator : sig
   external make
     :  ?asChild:bool
     -> ?forceMount:bool
@@ -141,12 +141,12 @@ module ItemIndicator = struct
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
 end
 
-module Separator = struct
+module Separator : sig
   external make : ?asChild:bool -> ?className:string -> element = "Separator"
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
 end
 
-module Sub = struct
+module Sub : sig
   external make
     :  ?defaultOpen:bool
     -> ?open_:(bool[@mel.as "open"])
@@ -157,7 +157,7 @@ module Sub = struct
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
 end
 
-module SubTrigger = struct
+module SubTrigger : sig
   external make
     :  ?asChild:bool
     -> ?disabled:bool
@@ -169,7 +169,7 @@ module SubTrigger = struct
   [@@react.component] [@@mel.module "@radix-ui/react-dropdown-menu"]
 end
 
-module SubContent = struct
+module SubContent : sig
   external make
     :  ?asChild:bool
     -> ?loop:bool
