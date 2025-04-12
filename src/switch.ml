@@ -2,7 +2,8 @@ open React
 
 module Root = struct
   external make
-    :  ?asChild:bool
+    :  ?id:string
+    -> ?asChild:bool
     -> ?defaultChecked:bool
     -> ?checked:bool
     -> ?onCheckedChange:(bool -> unit)

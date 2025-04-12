@@ -2,7 +2,8 @@ open React
 
 module Root : sig
   external make
-    :  ?asChild:bool
+    :  ?id:string
+    -> ?asChild:bool
     -> ?defaultChecked:bool
     -> ?checked:bool
     -> ?onCheckedChange:(bool -> unit)
